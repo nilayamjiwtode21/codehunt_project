@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light-mode">
+    <nav class="navbar">
+        <div class="logo">FinanceDash</div>
+        <div class="nav-links">
+            <a href="#" class="active">Dashboard</a>
+            <a href="./expenses.html">Expenses</a>
+            <a href="./expenses.html">Goals</a>
+            <a href="./login.html">Profile</a>
+        </div>
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-menu">
+                <img src="/placeholder.svg?height=32&width=32" alt="User" class="avatar">
+                <div class="dropdown-content">
+                    <a href="./login.htmls">Profile</a>
+                    <a href="#settings">Settings</a>
+                    <a href="#" id="logout">Logout</a>
+                </div>-
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Balance</h3>
+                <p class="amount">₹45,231.89</p>
+                <span class="trend positive">+20.1% from last month</span>
+            </div>
+            <div class="stat-card">
+                <h3>Expenses</h3>
+                <p class="amount">₹12,234.00</p>
+                <span class="trend negative">+4% from last month</span>
+            </div>
+            <div class="stat-card">
+                <h3>Savings</h3>
+                <p class="amount">₹8,432.00</p>
+                <span class="trend positive">+12% from last month</span>
+            </div>
+            <div class="stat-card">
+                <h3>Investments</h3>
+                <p class="amount">₹24,565.89</p>
+                <span class="trend positive">+8% from last month</span>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>Monthly Overview</h3>
+                <canvas id="overviewChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Expense Breakdown</h3>
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </div>
+
+        <div class="transactions-section">
+            <h3>Recent Transactions</h3>
+            <div class="transactions-list" id="transactionsList">
+                <!-- Transactions will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <div id="chatbot" class="chatbot">
+        <button class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>Financial Assistant</h3>
+                <button class="close-btn" id="closeChatbot">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <!-- Messages will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <script src="./chart.js"></script>
+</body>
+</html>
